@@ -1,17 +1,22 @@
 <template>
-  <div>
+  <div class="wrapper">
     <ul>
-      <li @click="sendBagRequest(1)">
+      <li @click="onClick(1)" :class="{'animate-to-top': firstBagClicked}">
         <div class="image-wrapper">
           <img src="~assets/recycled-bag.svg"/>
         </div>
       </li>
-      <li>
+      <li @click="onClick(2)" :class="{'animate-to-top': secondBagClicked}">
         <div class="image-wrapper">
           <img src="~assets/recycled-bag.svg"/>
         </div>
       </li>
-      <li>
+      <li @click="onClick(3)" :class="{'animate-to-top': thirdBagClicked}">
+        <div class="image-wrapper">
+          <img src="~assets/recycled-bag.svg"/>
+        </div>
+      </li>
+      <li @click="onClick(4)" :class="{'animate-to-top': fourthBagClicked}">
         <div class="image-wrapper">
           <img src="~assets/recycled-bag.svg"/>
         </div>
@@ -22,30 +27,82 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
+  data () {
+    return {
+      firstBagClicked: false,
+      secondBagClicked: false,
+      thirdBagClicked: false,
+      fourthBagClicked: false
+    }
+  },
   methods: {
     ...mapActions('main', [
       'sendBagRequest'
-    ])
+    ]),
+    toggleBagClass (amount) {
+      switch (amount) {
+          case 1:
+            this.firstBagClicked = !this.firstBagClicked
+            break;
+          case 2:
+            this.secondBagClicked = !this.secondBagClicked
+            break;
+          case 3:
+            this.thirdBagClicked = !this.thirdBagClicked
+            break;
+          case 4:
+            this.fourthBagClicked = !this.fourthBagClicked
+            break;
+          default:
+            throw new Exception('Function toggle not implemented for amount: ' + amount)
+        }
+    },
+
+    onClick (amount) {
+      this.sendBagRequest(amount)
+      this.toggleBagClass(amount)
+      setTimeout(() => {
+        this.toggleBagClass(amount)
+      }, 700)
+    }
   }
 }
 </script>
 <style scoped>
+.wrapper {
+  width: 100%;
+}
 ul {
   list-style-type: none;
   overflow: hidden;
   padding: 0;
+  background-color: rgba(94, 195, 108, 0.74);
 }
 li {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
   float: left;
   display: block;
-  width: 5em;
+  width: 3.5em;
   height: auto;
   margin: 1em;
-  padding: 2em 1em;
+  padding: 1em .5em;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
+ @keyframes slideUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.animate-to-top {
+  animation-duration: .7s;
+  animation-name: slideUp;
+}
 </style>
