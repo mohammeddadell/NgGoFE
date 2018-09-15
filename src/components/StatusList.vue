@@ -1,6 +1,6 @@
 <template>
   <div class="cards-wrapper">
-    <div class="row justify-center">
+    <div>
       <StatusCard v-for="status in statuses" :status="status"/>
     </div>
   </div>

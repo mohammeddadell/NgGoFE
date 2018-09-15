@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <q-page class="row justify-center">
     <StatusList/>
-  </div>
+  </q-page>
 </template>
 
 <style>

@@ -77,12 +77,17 @@ export default {
 <style scoped>
 .wrapper {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 4em;
 }
 ul {
   list-style-type: none;
   overflow: hidden;
   padding: 0;
-  background-color: rgba(94, 195, 108, 0.74);
+  background-color: rgb(103, 103, 103);
+  border-radius: 15px;
 }
 li {
   cursor: pointer;
@@ -95,6 +100,7 @@ li {
   padding: 1em .5em;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
  @keyframes slideUp {
   0% {

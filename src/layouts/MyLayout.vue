@@ -4,8 +4,8 @@
       <router-view />
       <div class="layout-padding docs-tab-pane row justify-center">
           <q-tabs class="tabs" inverted color="secondary" align="justify">
-              <q-tab default positioname="Home" slot="title" icon="home" label="Home"/>
-              <q-tab default positionname="scan_tool" slot="title" icon="loyalty" label="Delivery Status" />
+              <q-tab default positioname="Home" slot="title" icon="home" label="Home" @click="goTo('/')"/>
+              <q-tab default positionname="scan_tool" slot="title" icon="loyalty" label="Delivery Status" @click="goTo('/status')"/>
               <q-tab name="scan_tool" slot="title" icon="offline_bolt" label="Badges" />
           </q-tabs>
         </div>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
-
 export default {
   name: 'MyLayout',
   data () {
@@ -24,7 +22,9 @@ export default {
     }
   },
   methods: {
-    openURL
+    goTo (path) {
+      this.$router.push(path)
+    }
   }
 }
 </script>
@@ -36,6 +36,7 @@ export default {
   bottom: 0;
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
 }
 .tabs {
   width: 100%;

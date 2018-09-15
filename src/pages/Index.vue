@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <q-page class="row justify-center">
     <BagsList/>
-  </div>
+  </q-page>
 </template>
 
 <style>
