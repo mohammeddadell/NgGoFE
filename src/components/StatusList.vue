@@ -1,12 +1,13 @@
 <template>
   <div class="cards-wrapper">
     <div>
-      <StatusCard v-for="status in statuses" :status="status"/>
+      <StatusCard v-for="giveaway in giveaways" :giveaway="giveaway"/>
     </div>
   </div>
 </template>
 <script>
 import StatusCard from './StatusCard.vue'
+import { mapState } from 'vuex'
 
 export default {
   data () {
@@ -16,6 +17,11 @@ export default {
         { status: 'waiting', date: '-' }
       ]
     }
+  },
+  computed: {
+    ...mapState('main', [
+      'giveaways'
+    ])
   },
   components: {
     StatusCard

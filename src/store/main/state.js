@@ -1,3 +1,5 @@
 export default {
-  bagRequestSent: false
+  bagRequestSent: false,
+  giveaways: [],
+  user: {}
 }

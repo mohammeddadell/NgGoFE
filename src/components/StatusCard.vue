@@ -2,13 +2,13 @@
   <div class="status-card">
     <q-card>
       <q-card-title>
-        2 Bags
+        {{ giveaway.amount }} Bags
       </q-card-title>
       <q-card-separator />
         <q-card-main>
-          {{ status.date }}
+          {{ giveaway.timestamp }}
           </br>
-          <q-icon name="check_circle_outline"/> {{ status.status }}
+          <q-icon name="check_circle_outline"/>
       </q-card-main>
     </q-card>
   </div>
@@ -16,10 +16,13 @@
 <script>
 export default {
   props: {
-    status: {
+    giveaway: {
       required: true
     }
-  }
+  },
+  mounted() {
+    console.log(this.giveaway)
+  },
 }
 </script>
 <style>
