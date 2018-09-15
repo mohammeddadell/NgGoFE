@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import socket from 'socket.io-client'
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    const io = socket('http://localhost:9000')
+  },
 }
 </script>
 
