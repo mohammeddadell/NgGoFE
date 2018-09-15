@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
-    <h1>Status</h1>
+  <q-page class="flex flex-end">
+    <StatusList/>
   </q-page>
 </template>
 
@@ -8,7 +8,11 @@
 </style>
 
 <script>
+import StatusList from '../components/StatusList'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    StatusList
+  }
 }
 </script>
