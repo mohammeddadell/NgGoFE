@@ -5,7 +5,8 @@
       <div class="layout-padding docs-tab-pane row justify-center">
           <q-tabs class="tabs" inverted color="secondary" align="justify">
               <q-tab default positioname="Home" slot="title" icon="home" label="Home"/>
-              <q-tab name="scan_tool" slot="title" icon="loyalty" label="Delivery Status" />
+              <q-tab default positionname="scan_tool" slot="title" icon="loyalty" label="Delivery Status" />
+              <q-tab name="scan_tool" slot="title" icon="offline_bolt" label="Badges" />
           </q-tabs>
         </div>
     </q-page-container>
