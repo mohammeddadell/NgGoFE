@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li>
+      <li @click="sendBagRequest(1)">
         <div class="image-wrapper">
           <img src="~assets/recycled-bag.svg"/>
         </div>
@@ -20,8 +20,13 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
-
+  methods: {
+    ...mapActions('main', [
+      'sendBagRequest'
+    ])
+  }
 }
 </script>
 <style scoped>
@@ -31,7 +36,8 @@ ul {
   padding: 0;
 }
 li {
-  background-color: black;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
   float: left;
   display: block;
   width: 5em;
@@ -39,7 +45,7 @@ li {
   margin: 1em;
   padding: 2em 1em;
   border-radius: 15px;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 </style>
