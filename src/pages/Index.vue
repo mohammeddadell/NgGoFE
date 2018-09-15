@@ -6,7 +6,6 @@
 
 <style>
 </style>
-
 <script>
 import BagsList from '../components/BagsList'
 export default {

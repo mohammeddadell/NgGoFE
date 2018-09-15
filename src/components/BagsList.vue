@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper">
+    <div class="ranking-wrapper">
+      <Ranking />
+    </div>
     <ul>
       <li @click="onClick(1)" :class="{'animate-to-top': firstBagClicked}">
         <div class="image-wrapper">
@@ -27,7 +30,11 @@
 <script>
 import { mapActions } from 'vuex'
 import { Notify } from 'quasar'
+import Ranking from './Ranking'
 export default {
+  components: {
+    Ranking
+  },
   data () {
     return {
       firstBagClicked: false,
@@ -81,6 +88,7 @@ export default {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 4em;
+  flex-wrap: wrap;
 }
 ul {
   list-style-type: none;
@@ -116,5 +124,8 @@ li {
 .animate-to-top {
   animation-duration: .7s;
   animation-name: slideUp;
+}
+.ranking-wrapper {
+  width: 90%;
 }
 </style>
