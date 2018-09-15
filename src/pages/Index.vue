@@ -1,7 +1,7 @@
 <template>
-  <q-page class="flex flex-center">
+  <div>
     <BagsList/>
-  </q-page>
+  </div>
 </template>
 
 <style>

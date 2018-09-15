@@ -2,15 +2,13 @@
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
       <router-view />
+      <div class="layout-padding docs-tab-pane row justify-center">
+          <q-tabs class="tabs" inverted color="secondary" align="justify">
+              <q-tab default positioname="Home" slot="title" icon="home" label="Home"/>
+              <q-tab name="scan_tool" slot="title" icon="loyalty" label="Delivery Status" />
+          </q-tabs>
+        </div>
     </q-page-container>
-    <div slot="footer" class="toolbar">
-      <quasar-tabs slot="footer">
-        <quasar-tab icon="view_quilt" route="/showcase/layout" exact replace>About</quasar-tab>
-        <quasar-tab icon="view_day" route="/showcase/layout/toolbar" replace>Toolbar</quasar-tab>
-        <quasar-tab icon="view_day" route="/showcase/layout/tabs" replace>Tabs</quasar-tab>
-        <quasar-tab icon="input" route="/showcase/layout/drawer" replace>Drawer</quasar-tab>
-      </quasar-tabs>
-    </div>
   </q-layout>
 </template>
 
@@ -30,5 +28,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.docs-tab-pane {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.tabs {
+  width: 100%;
+}
 </style>

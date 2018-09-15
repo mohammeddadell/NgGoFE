@@ -1,7 +1,7 @@
 <template>
-  <q-page class="flex flex-end">
+  <div>
     <StatusList/>
-  </q-page>
+  </div>
 </template>
 
 <style>
