@@ -3,28 +3,38 @@
     <div class="ranking-wrapper">
       <Ranking />
     </div>
-    <ul>
-      <li @click="onClick(1)" :class="{'animate-to-top': firstBagClicked}">
-        <div class="image-wrapper">
-          <img src="~assets/recycled-bag.svg"/>
-        </div>
-      </li>
-      <li @click="onClick(2)" :class="{'animate-to-top': secondBagClicked}">
-        <div class="image-wrapper">
-          <img src="~assets/recycled-bag.svg"/>
-        </div>
-      </li>
-      <li @click="onClick(3)" :class="{'animate-to-top': thirdBagClicked}">
-        <div class="image-wrapper">
-          <img src="~assets/recycled-bag.svg"/>
-        </div>
-      </li>
-      <li @click="onClick(4)" :class="{'animate-to-top': fourthBagClicked}">
-        <div class="image-wrapper">
-          <img src="~assets/recycled-bag.svg"/>
-        </div>
-      </li>
-    </ul>
+    <div class="bottom-modal">
+    <q-select
+      color="white"
+      leftTextColor="white"
+      rightTextColor="white"
+      v-model="selectedLocation"
+      :options="selectOptions"
+      :inverted-light="true"
+    />
+      <ul>
+        <li @click="onClick(1)" :class="{'animate-to-top': firstBagClicked}">
+          <div class="image-wrapper">
+            <img src="~assets/recycled-bag.svg"/>
+          </div>
+        </li>
+        <li @click="onClick(2)" :class="{'animate-to-top': secondBagClicked}">
+          <div class="image-wrapper">
+            <img src="~assets/recycled-bag.svg"/>
+          </div>
+        </li>
+        <li @click="onClick(3)" :class="{'animate-to-top': thirdBagClicked}">
+          <div class="image-wrapper">
+            <img src="~assets/recycled-bag.svg"/>
+          </div>
+        </li>
+        <li @click="onClick(4)" :class="{'animate-to-top': fourthBagClicked}">
+          <div class="image-wrapper">
+            <img src="~assets/recycled-bag.svg"/>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -40,7 +50,18 @@ export default {
       firstBagClicked: false,
       secondBagClicked: false,
       thirdBagClicked: false,
-      fourthBagClicked: false
+      fourthBagClicked: false,
+      selectedLocation: 1,
+      selectOptions: [
+        {
+          label: 'Current Location',
+          value: 1
+        },
+        {
+          label: 'Hardbrücke 1, Zürich',
+          value: 2
+        }
+      ],
     }
   },
   methods: {
@@ -90,12 +111,30 @@ export default {
   margin-bottom: 4em;
   flex-wrap: wrap;
 }
+.bottom-modal {
+  background-color: rgb(103, 103, 103);
+  border-radius: 15px;
+  height: 20rem;
+  display: flex;
+  box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.68);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 97%;
+}
+
+.q-select {
+  width: 90%;
+  height: 4rem;
+  margin-top: 3rem;
+
+}
 ul {
   list-style-type: none;
   overflow: hidden;
   padding: 0;
-  background-color: rgb(103, 103, 103);
-  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
 }
 li {
   cursor: pointer;
