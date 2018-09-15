@@ -26,6 +26,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
+import { Notify } from 'quasar'
 export default {
   data () {
     return {
@@ -59,6 +60,11 @@ export default {
     },
 
     onClick (amount) {
+      Notify.create({
+        message: amount + ' bags will be picked up!',
+        position: 'top',
+        color: 'positive'
+      })
       this.sendBagRequest(amount)
       this.toggleBagClass(amount)
       setTimeout(() => {
