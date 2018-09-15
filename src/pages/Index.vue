@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <h1>Start</h1>
+    <BagsList/>
   </q-page>
 </template>
 
@@ -8,7 +8,11 @@
 </style>
 
 <script>
+import BagsList from '../components/BagsList'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    BagsList
+  }
 }
 </script>
