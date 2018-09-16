@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper">
-    <div class="bottom-modal">
+  <div class="wrapper" >
+    <div class="bottom-modal" id="bagsWrapper">
     <q-select
       color="white"
       leftTextColor="white"
@@ -14,21 +14,25 @@
           <div class="image-wrapper">
             <img src="~assets/recycled-bag.svg"/>
           </div>
+        <span class="bagAmountTxt"> 1x </span>
         </li>
         <li @click="onClick(2)" :class="{'animate-to-top': secondBagClicked}">
           <div class="image-wrapper">
             <img src="~assets/recycled-bag.svg"/>
           </div>
+          <span class="bagAmountTxt"> 2x </span>
         </li>
         <li @click="onClick(3)" :class="{'animate-to-top': thirdBagClicked}">
           <div class="image-wrapper">
             <img src="~assets/recycled-bag.svg"/>
           </div>
+          <span class="bagAmountTxt"> 3x </span>
         </li>
         <li @click="onClick(4)" :class="{'animate-to-top': fourthBagClicked}">
           <div class="image-wrapper">
             <img src="~assets/recycled-bag.svg"/>
           </div>
+          <span class="bagAmountTxt"> 4x </span>
         </li>
       </ul>
     </div>
