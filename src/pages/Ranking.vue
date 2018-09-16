@@ -1,6 +1,7 @@
 <template>
   <div class="ranking-wrapper">
     <Ranking />
+    
   </div>
 </template>
 <script>

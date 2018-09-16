@@ -1,28 +1,7 @@
 <template>
  <div class="wrapper">
-  <q-list highlight class="list">
-  <q-list-header>Ranking</q-list-header>
-  <q-item>
-    <q-item-side right icon="whatshot" />
-    <q-item-main label="1. Jim Doe" />
-  </q-item>
-  <q-item-separator />
-  <q-item>
-    <q-item-side right icon="whatshot" />
-    <q-item-main label="1. Jim Doe" />
-  </q-item>
-  <q-item-separator />
-  <q-item>
-    <q-item-side right icon="whatshot" />
-    <q-item-main label="2. Jim Doe" />
-  </q-item>
-  <q-item-separator />
-  <q-item>
-    <q-item-side right icon="whatshot" />
-    <q-item-main label="3. Jim Doe" />
-  </q-item>
-
-  </q-list>
+  <p id="medalsTxt">You have gained these medals. Good job!</p>
+    <div> <img id="medalImg" src="~assets/medal.png"> </div>
  </div>
 </template>
 <script>
