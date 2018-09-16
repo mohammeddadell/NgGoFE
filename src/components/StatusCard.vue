@@ -37,10 +37,11 @@ export default {
     },
     color () {
       return (status) => this.icons[status].color
-  watch: {
-    giveaway: function (newG, oldG) {
-      console.log('old:', oldG, ' - new:', newG);
-      
+    },
+    watch: {
+      giveaway: function (newG, oldG) {
+        console.log('old:', oldG, ' - new:', newG);
+      }
     }
   }
 }
