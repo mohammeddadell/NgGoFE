@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .docs-tab-pane {
   position: absolute;
   width: 100%;
@@ -40,5 +40,8 @@ export default {
 }
 .tabs {
   width: 100%;
+}
+.q-layout-page-container {
+  background-color: #e0e0e0;
 }
 </style>

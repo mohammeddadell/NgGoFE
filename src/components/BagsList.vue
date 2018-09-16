@@ -114,11 +114,11 @@ export default {
   flex-wrap: wrap;
 }
 .bottom-modal {
-  background-color: rgb(103, 103, 103);
+  background-color: #ffffffb0;
   border-radius: 15px;
   height: 20rem;
   display: flex;
-  box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.68);
+  box-shadow: 1px 3px 16px rgba(0, 0, 0, 0.6);
   margin-bottom: 1rem;
   flex-wrap: wrap;
   justify-content: center;
