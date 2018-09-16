@@ -1,5 +1,15 @@
 <template>
   <div class="wrapper" >
+    <q-modal minimized ref="modalRef" v-modal="modalIsOpen">
+      <div style="padding: 50px">
+        <div class="q-display-1 q-mb-md">Minimized Modal</div>
+        <p>This one has backdrop on small screens too.</p>
+        <div class="modal-buttons">
+          <q-btn color="primary" v-close-overlay label="Accept" @click="acceptModal"/>
+          <q-btn color="red" v-close-overlay label="Close" @click="dismissModal"/>
+        </div>
+      </div>
+    </q-modal>
     <div class="bottom-modal" id="bagsWrapper">
     <q-select
       color="white"
@@ -46,6 +56,9 @@ export default {
   components: {
     Ranking
   },
+  mounted () {
+    this.$refs.modalRef.hide()
+  },
   data () {
     return {
       firstBagClicked: false,
@@ -63,6 +76,7 @@ export default {
           value: 2
         }
       ],
+      modalIsOpen: false
     }
   },
   methods: {
@@ -87,24 +101,30 @@ export default {
             throw new Exception('Function toggle not implemented for amount: ' + amount)
         }
     },
-
     onClick (amount) {
+      this.$refs.modalRef.show()
+      this.sendBagRequest(amount)
+      this.toggleBagClass(amount)
+      setTimeout(() => {
+        this.toggleBagClass(amount)
+      }, 700)
+    },
+    dismissModal () {
+      this.$refs.modalRef.hide()
+    },
+    acceptModal () {
+      this.$refs.modalRef.hide()
       Notify.create({
         message: 'You are going to donate ' + amount + ' bags. Please wait for confirmation',
         position: 'top',
         color: 'positive',
         icon: 'thumb_up_alt'
       })
-      this.sendBagRequest(amount)
-      this.toggleBagClass(amount)
-      setTimeout(() => {
-        this.toggleBagClass(amount)
-      }, 700)
     }
   }
 }
 </script>
-<style scoped>
+<style>
 .wrapper {
   width: 100%;
   display: flex;
@@ -129,7 +149,7 @@ export default {
   width: 90%;
   height: 4rem;
   margin-top: 3rem;
-
+  border-radius: 12px;
 }
 ul {
   list-style-type: none;
@@ -168,5 +188,17 @@ li {
 }
 .ranking-wrapper {
   width: 90%;
+}
+.modal-content {
+  border-radius: 24px;
+  text-align: center;
+}
+.modal-content button {
+  width: 60%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px #f443368c;
+}
+.modal-buttons {
+  display: inline-block;
 }
 </style>

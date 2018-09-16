@@ -60,7 +60,8 @@ module.exports = function (ctx) {
         'QRouteTab',
         'QItemSeparator',
         'QItemTile',
-        'QSelect'
+        'QSelect',
+        'QModal'
       ],
       directives: [
         'Ripple'

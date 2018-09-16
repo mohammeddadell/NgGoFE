@@ -11,7 +11,7 @@
 
 import Vue from 'vue'
 
-import {Quasar,QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QTabs,QTab,QTabPane,QRouteTab,QItemSeparator,QItemTile,QSelect,Ripple,Notify} from 'quasar'
+import {Quasar,QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QTabs,QTab,QTabPane,QRouteTab,QItemSeparator,QItemTile,QSelect,QModal,Ripple,Notify} from 'quasar'
 
 
-Vue.use(Quasar, { config: {},components: {QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QTabs,QTab,QTabPane,QRouteTab,QItemSeparator,QItemTile,QSelect},directives: {Ripple},plugins: {Notify} })
+Vue.use(Quasar, { config: {},components: {QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QTabs,QTab,QTabPane,QRouteTab,QItemSeparator,QItemTile,QSelect,QModal},directives: {Ripple},plugins: {Notify} })
