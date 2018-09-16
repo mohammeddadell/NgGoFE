@@ -42,6 +42,6 @@ export default {
   width: 100%;
 }
 .q-layout-page-container {
-  background-color: #e0e0e0;
+  background-color: #e8e8e8;
 }
 </style>

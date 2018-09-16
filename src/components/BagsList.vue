@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper" >
     <q-modal minimized ref="modalRef" v-modal="modalIsOpen">
-      <div style="padding: 50px">
+      <div style="padding: 20px">
         <div class="q-display-1 q-mb-md">Minimized Modal</div>
         <p>This one has backdrop on small screens too.</p>
         <div class="modal-buttons">
-          <q-btn color="primary" v-close-overlay label="Accept" @click="acceptModal"/>
+          <q-btn color="green" v-close-overlay label="Accept" @click="acceptModal"/>
           <q-btn color="red" v-close-overlay label="Close" @click="dismissModal"/>
         </div>
       </div>
@@ -113,13 +113,13 @@ export default {
       this.$refs.modalRef.hide()
     },
     acceptModal () {
-      this.$refs.modalRef.hide()
       Notify.create({
-        message: 'You are going to donate ' + amount + ' bags. Please wait for confirmation',
+        message: 'You are going to donate bags. Please wait for confirmation',
         position: 'top',
         color: 'positive',
         icon: 'thumb_up_alt'
       })
+      this.$refs.modalRef.hide()
     }
   }
 }
@@ -194,11 +194,17 @@ li {
   text-align: center;
 }
 .modal-content button {
-  width: 60%;
+  width: 43%;
   border-radius: 30px;
+}
+.modal-content button.bg-red {
   box-shadow: 1px 1px 10px #f443368c;
 }
+.modal-content button.bg-green {
+  box-shadow: 1px 1px 10px #1780288c;
+}
 .modal-buttons {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
