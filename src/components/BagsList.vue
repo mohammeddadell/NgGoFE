@@ -49,12 +49,13 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import { Notify } from 'quasar'
 import Ranking from './Ranking'
+import Banner from './InfoBanner'
 export default {
   components: {
-    Ranking
+    Ranking, Banner
   },
   mounted () {
     this.$refs.modalRef.hide()
@@ -78,6 +79,11 @@ export default {
       ],
       modalIsOpen: false
     }
+  },
+  computed: {
+    ...mapState('main', [
+      'collectionTime'
+    ])
   },
   methods: {
     ...mapActions('main', [

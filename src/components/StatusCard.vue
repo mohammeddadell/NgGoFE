@@ -1,12 +1,13 @@
 <template>
-  <div class="status-card">
+  <div padding-top="10px" class="status-card">
     <q-card>
       <q-card-title>
         <q-icon class="big-icon" :name="icon(giveaway.status)" :color="color(giveaway.status)"/> {{ giveaway.amount }} Bags
       </q-card-title>
       <q-card-separator />
         <q-card-main>
-          {{ giveaway.timestamp }}
+          Created at {{ giveaway.timestamp }}
+          Collected at {{ giveaway.collectionTime }}
       </q-card-main>
     </q-card>
   </div>
@@ -36,6 +37,10 @@ export default {
     },
     color () {
       return (status) => this.icons[status].color
+  watch: {
+    giveaway: function (newG, oldG) {
+      console.log('old:', oldG, ' - new:', newG);
+      
     }
   }
 }
@@ -51,5 +56,8 @@ export default {
 .big-icon {
   font-size: 2em;
   float: left;
+}
+.big-icon {
+  font-size: 5rem
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="cards-wrapper">
+    <HelpButton/>
     <h2>Giveaways</h2>
     <div>
       <StatusCard v-for="giveaway in giveaways" :giveaway="giveaway"/>
@@ -9,6 +10,7 @@
 <script>
 import StatusCard from './StatusCard.vue'
 import { mapState } from 'vuex'
+import HelpButton from './HelpButton.vue'
 
 export default {
   data () {
@@ -24,8 +26,14 @@ export default {
       'giveaways'
     ])
   },
+  watch: {
+    giveaways: function (newG, oldG) {
+      console.log('old:', oldG, ' - new:', newG);
+      
+    }
+  },
   components: {
-    StatusCard
+    StatusCard, HelpButton
   }
 }
 </script>

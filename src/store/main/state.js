@@ -1,5 +1,6 @@
 export default {
   bagRequestSent: false,
   giveaways: [],
-  user: {}
+  user: {},
+  collectionTime: '20.09.2018 13:30'
 }
