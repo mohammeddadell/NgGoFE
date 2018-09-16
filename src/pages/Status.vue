@@ -3,10 +3,6 @@
     <StatusList/>
   </q-page>
 </template>
-
-<style>
-</style>
-
 <script>
 import StatusList from '../components/StatusList'
 import { mapActions, mapState } from 'vuex'
@@ -25,3 +21,5 @@ export default {
   },
 }
 </script>
+<style>
+</style>

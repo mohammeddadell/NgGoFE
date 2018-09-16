@@ -31,7 +31,7 @@ export default {
 
 <style>
 .docs-tab-pane {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   padding-left: 0;
@@ -43,5 +43,8 @@ export default {
 }
 .q-layout-page-container {
   background-color: #e8e8e8;
+}
+.q-card-title {
+  text-align: center;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="cards-wrapper">
+    <h2>Giveaways</h2>
     <div>
       <StatusCard v-for="giveaway in giveaways" :giveaway="giveaway"/>
     </div>
@@ -32,5 +33,8 @@ export default {
 .cards-wrapper {
   width: 80%;
   margin: 0 auto;
+}
+h2 {
+  font-weight: bold
 }
 </style>
