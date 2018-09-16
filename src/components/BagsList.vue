@@ -1,8 +1,5 @@
 <template>
   <div class="wrapper">
-    <div class="ranking-wrapper">
-      <Ranking />
-    </div>
     <div class="bottom-modal">
     <q-select
       color="white"

@@ -5,8 +5,8 @@ const r = axios.create({
 })
 
 const currentLocation = {
-  "latitude": "47.9000",
-  "longitude": "8.5143",
+  "latitude": "47.3880275",
+  "longitude": "8.517616",
   "street": "Technoparkstrasse",
   "number": "1",
   "city": "Zürich",
