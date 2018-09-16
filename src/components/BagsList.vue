@@ -89,9 +89,10 @@ export default {
 
     onClick (amount) {
       Notify.create({
-        message: amount + ' bags will be picked up!',
+        message: 'You are going to donate ' + amount + ' bags. Please wait for confirmation',
         position: 'top',
-        color: 'positive'
+        color: 'positive',
+        icon: 'thumb_up_alt'
       })
       this.sendBagRequest(amount)
       this.toggleBagClass(amount)
